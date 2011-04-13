@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RESULT>
+<SESSION><SESSIONVAR name="LNG">DU</SESSIONVAR>
+<SESSIONVAR name="DB">1</SESSIONVAR>
+<SESSIONVAR name="SID">a8453ef9-1</SESSIONVAR>
+<SESSIONVAR name="SET">1</SESSIONVAR>
+
+<SESSIONVAR name="TITLE">G%26ouml%3Bttinger+Universit%26auml%3Btskatalog+(GUK)</SESSIONVAR>
+</SESSION>
+<SET nr="1" type="0" hits="8" >
+
+  <SHORTTITLE nr="1" PPN="655868194" matstring="MAT_B" matcode="AFa"
+format="text" available="no">The Oxford history of ... / Vol. 3  / The nineteenth-century novel, 1820 - 1880
+<br />
+/ Jenny Bourne Taylor. - 2011</SHORTTITLE>
+
+  <SHORTTITLE nr="2" PPN="635183749" matstring="MAT_B" matcode="Aaua"
+format="text" available="no">Die Robinsonin : Repräsentationen von Weiblichkeit in deutsch- und englischsprachigen Robinsonaden des 20. Jahrhundert 
+<br />
+/ Celia Torke. - Göttingen : V &amp; R Unipress, 2011</SHORTTITLE>
+
+  <SHORTTITLE nr="3" PPN="637252128" matstring="MAT_B" matcode="Aau"
+format="text" available="no">Theaterwissenschaft im deutschsprachigen Raum
+<br />
+/ Christopher Balme. - Tübingen : Narr, 2010</SHORTTITLE>
+
+  <SHORTTITLE nr="4" PPN="625268237" matstring="MAT_B" matcode="Aaukf"
+format="text" available="no">The Beowulf manuscript : complete texts and ; The fight at Finnsburg
+<br />
+/ Robert Dennis Fulk. - Cambridge, Mass. [u.a.] : Harvard University Press, 2010</SHORTTITLE>
+
+  <SHORTTITLE nr="5" PPN="61753716X" matstring="MAT_B" matcode="Aau"
+format="text" available="no">A student's advanced grammar of English : (SAGE)
+<br />
+/ Peter Fenn. - Tübingen : Francke, 2010</SHORTTITLE>
+
+  <SHORTTITLE nr="6" PPN="522725252" matstring="MAT_B" matcode="Aau"
+format="text" available="no">Adventures into otherness : child metamorphs in late twentieth-century children's literature
+<br />
+/ Maria Lassén-Seger. - Åbo : Åbo Akad. Förl., 2006</SHORTTITLE>
+
+  <SHORTTITLE nr="7" PPN="13041221X" matstring="MAT_T" matcode="Abvz"
+format="text" available="no">Forum modernes Theater
+<br />
+Tübingen : Narr, 1986-</SHORTTITLE>
+
+  <SHORTTITLE nr="8" PPN="183451988" matstring="MAT_B" matcode="Aau"
+format="text" available="no">The works of Lord Byron : complete in one volume
+<br />
+/ George Gordon Noël Byron. - 3. ed., considerably augm. - Francfort o.M. : Broenner, 1837</SHORTTITLE>
+
+</SET>
+</RESULT>

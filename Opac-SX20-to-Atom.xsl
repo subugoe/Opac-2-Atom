@@ -6,13 +6,15 @@
 <xsl:stylesheet
 	version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns="http://www.w3.org/2005/Atom">
+	xmlns="http://www.w3.org/2005/Atom"
+	html="http://www.w3.org/1999/xhtml">
 
 	<xsl:output indent="yes" method="xml" version="1.0" encoding="UTF-8" media-type="text"/>
 	<xsl:param name="query"/>
 	<xsl:param name="queryEscaped"/>
 	<xsl:param name="myURL"/>
 	<xsl:param name="updated"/>
+	
 	<xsl:variable name="opacURL">http://opac.sub.uni-goettingen.de/DB=1/</xsl:variable>
 		
 	<xsl:template match="@*|node()">
@@ -57,7 +59,7 @@
 
 
 	<xsl:template match="SHORTTITLE">
-		<xsl:variable name="PPN" select="@PPN"/>
+		<xsl:variable name="PPN" select="@matstring"/>
 		<xsl:variable name="PPNWebURL">
 			<xsl:value-of select="$opacURL"/>
 			<xsl:text>PPNSET?PPN=</xsl:text>
@@ -67,13 +69,43 @@
 
 		<atom:entry>
 			<atom:id><xsl:value-of select="$PPNWebURL"/></atom:id>
-			<atom:title><xsl:value-of select="$bookName"/></atom:title>
+			<atom:title>
+				<xsl:value-of select="ous/title"/>
+				<xsl:text> – </xsl:text>
+				<xsl:value-of select="ous/author"/>
+			</atom:title>
 			<atom:link rel="alternate">
 				<xsl:attribute name="href">
 					<xsl:value-of select="$PPNWebURL"/>
 				</xsl:attribute>
 			</atom:link>
-			<atom:updated><xsl:value-of select="$updated"/></atom:updated>
+			<atom:updated>
+				<xsl:text>20</xsl:text>
+				<xsl:value-of select="substring(ous/date_availability, 7, 2)"/>
+				<xsl:text>-</xsl:text>
+				<xsl:value-of select="substring(ous/date_availability, 4, 2)"/>
+				<xsl:text>-</xsl:text>
+				<xsl:value-of select="substring(ous/date_availability, 1, 2)"/>
+				<xsl:text>T02:00:00+01:00</xsl:text>
+			</atom:updated>
+			<atom:content type="xhtml">
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<xsl:for-each select="ous/signature">
+						<p>
+							<xsl:text>Signatur(e):</xsl:text>
+							<xsl:value-of select="."/>
+						</p>
+					</xsl:for-each>
+					<p>
+						<a>
+							<xsl:attribute name="href">
+								<xsl:value-of select="$PPNWebURL"/>
+							</xsl:attribute>
+							<xsl:text>Im Opac ansehen</xsl:text>
+						</a>
+					</p>
+				</div>
+			</atom:content>
 		</atom:entry>
 	</xsl:template>
 

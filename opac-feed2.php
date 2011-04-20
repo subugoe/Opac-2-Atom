@@ -7,10 +7,15 @@
  */
 
 $queryTerm = $_GET['q'];
-$queryTerm = 'LKL IA 665';
+// $queryTerm = 'LKL IA 665';
 $queryTermEscaped = urlencode($queryTerm);
 $baseURL = 'http://opac.sub.uni-goettingen.de/DB=1/XML=1/PRS=SX20/FULLTITLE=1/REC=1/SHRTST=25/';
 $queryURL = $baseURL . 'CMD?ACT=SRCHA&IKT=1016&SRT=Dya&TRM=' . $queryTermEscaped;
+$queryLanguage = $_GET['language'];
+if (!$queryLanguage) {
+	$queryLanguage = 'de';
+}
+
 $opacFeedXML = file_get_contents($queryURL);
 // The feed contains weirdly escaped 'markup' with plenty of &lt; entities.
 // To make sense of that in XSL these need to be 'unescaped'.
@@ -28,9 +33,10 @@ $XSLXML = file_get_contents('Opac-SX20-to-Atom.xsl');
 $XSL->loadXML($XSLXML);
 
 $parameters = Array(
-	'query' => $query,
-	'queryEscaped' => $queryEscaped,
+	'query' => $queryTerm,
+	'queryEscaped' => $queryTermEscaped,
 	'myURL' => $currentURL,
+	'language' => $queryLanguage,
 	'updated' => $timeString
 );
 

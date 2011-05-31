@@ -9,7 +9,8 @@
 $queryTerm = $_GET['q'];
 // $queryTerm = 'LKL IA 665';
 $queryTermEscaped = urlencode($queryTerm);
-$baseURL = 'http://opac.sub.uni-goettingen.de/DB=1/XML=1/PRS=SX20/FULLTITLE=1/REC=1/SHRTST=25/';
+$hitCount = 50;
+$baseURL = 'http://opac.sub.uni-goettingen.de/DB=1/XML=1/PRS=SX20/FULLTITLE=1/REC=1/SHRTST=' . $hitCount . '/';
 $queryURL = $baseURL . 'CMD?ACT=SRCHA&IKT=1016&SRT=LST_Dya&TRM=' . $queryTermEscaped . '+AND+NOT+SLK+%5Bar%5D*';
 $queryLanguage = $_GET['language'];
 if (!$queryLanguage) {

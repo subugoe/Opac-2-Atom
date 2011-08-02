@@ -12,9 +12,10 @@ $queryTermEscaped = urlencode($queryTerm);
 $hitCount = 50;
 $baseURL = 'http://opac.sub.uni-goettingen.de/DB=1/XML=1/PRS=SX20/FULLTITLE=1/REC=1/SHRTST=' . $hitCount . '/';
 $queryURL = $baseURL . 'CMD?ACT=SRCHA&IKT=1016&SRT=LST_Dya&TRM=' . $queryTermEscaped . '+AND+NOT+SLK+%5Bar%5D*';
-$queryLanguage = $_GET['language'];
-if (!$queryLanguage) {
-	$queryLanguage = 'de';
+
+$queryLanguage = 'de';
+if (array_key_exists('language', $_GET)) {
+	$queryLanguage = $_GET['language'];
 }
 
 $opacFeedXML = file_get_contents($queryURL);
